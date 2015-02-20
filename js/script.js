@@ -33,7 +33,7 @@ $(document).ready(function(){
 $(window).scroll(function() {
 	$("#navhome").removeClass("position");
 	var offset = window.pageYOffset || document.documentElement.scrollTop;
-	if (offset >= 10)
+	if (offset >= 100)
 	{
 		$("header").addClass("smaller");
 	}
