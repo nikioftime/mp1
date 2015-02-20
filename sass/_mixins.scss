@@ -1,0 +1,14 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin shrink-transition($type-and-duration) {
+	-webkit-transition: $type-and-duration;
+       -moz-transition: $type-and-duration;
+        -ms-transition: $type-and-duration;
+         -o-transition: $type-and-duration;
+            transition: $type-and-duration;
+}
