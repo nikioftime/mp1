@@ -15,9 +15,16 @@
 
 @mixin linear-fade($r, $g, $b, $a1, $a2) {
 	background: -webkit-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
-  	     background: -o-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
-  	   background: -moz-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
-  	        background: linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
+  	background:      -o-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
+  	background:	   -moz-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
+  	background: 		linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
+}
+
+@mixin linear-fade-img($r, $g, $b, $a1, $a2, $img) {
+	background: -webkit-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2)), url($img) no-repeat;
+  	background:      -o-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2)), url($img) no-repeat;
+  	background:	   -moz-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2)), url($img) no-repeat;
+  	background: 		linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2)), url($img) no-repeat;
 }
 
 @mixin columns ($count, $gap, $gap-style) {
