@@ -5,6 +5,7 @@
           border-radius: $radius;
 }
 
+//enables navbar shrinkage
 @mixin shrink-transition($type-and-duration) {
 	-webkit-transition: $type-and-duration;
        -moz-transition: $type-and-duration;
@@ -13,6 +14,8 @@
             transition: $type-and-duration;
 }
 
+//linear fade
+//used in the top bit with the fixed image;
 @mixin linear-fade($r, $g, $b, $a1, $a2) {
 	background: -webkit-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
   	background:      -o-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
@@ -20,6 +23,8 @@
   	background: 		linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2));
 }
 
+//linear fade that also has a background image
+//used in the carousel
 @mixin linear-fade-img($r, $g, $b, $a1, $a2, $img) {
 	background: -webkit-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2)), url($img) no-repeat;
   	background:      -o-linear-gradient(rgba($r, $g, $b, $a1), rgba($r, $g, $b, $a2)), url($img) no-repeat;

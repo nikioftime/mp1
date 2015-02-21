@@ -16,6 +16,9 @@
 // }
 
 $(document).ready(function(){
+
+	//smooth scrolling
+	//it looks pretty neat
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 
@@ -28,11 +31,9 @@ $(document).ready(function(){
 	        window.location.hash = target;
 	    });
 	});
-	$("#navabt").removeClass("position");
-	$("#navproj").removeClass("position");
-	$("#navdog").removeClass("position");
 });
 
+//position indicator
 $(window).scroll(function() {
 	$("#navhome").removeClass("position");
 	var offset = window.pageYOffset || document.documentElement.scrollTop;
@@ -49,6 +50,7 @@ $(window).scroll(function() {
 	var projoff = $("section#projects").offset().top;
 	var whatoff = $("section#dog").offset().top;
 
+	//the -50 used because that's the height of the shrunken navbar
 	if (offset < abtoff - 50) {
 		$("#navhome").addClass("position");
 		$("#navabt").removeClass("position");
@@ -69,7 +71,8 @@ $(window).scroll(function() {
 	};
 });
 
-// get a list of everything in carousel (.find function)
+//carousel implemented
+//fades used to make transitions look crazy professional
 var carDiv = $(".carousel-container").find("div");
 console.log(carDiv[0]);
 var curr = 0;
@@ -78,6 +81,8 @@ $(carDiv[2]).hide();
 var leftButton = $("button#left");
 var rightButton = $("button#right");
 var past;
+
+//buttons to flip through the carousel slides
 leftButton.on('click', function (e) {
 	past=curr;
 	curr = ((curr - 1) + 3) % 3;
@@ -109,12 +114,16 @@ rightButton.on('click', function (e) {
 	}
 });
 
+//modal implemented
+//launch from clicking that pawprint
 var modal = $("#modal");
 var overlay = $("#overlay");
 modal.hide();
 overlay.hide();
 var bluesClue = $("#launch");
 bluesClue.on('click', function(e) {
+	//center the modal
+	//doing the math here because I really didn't want to do it anywhere else
 	var top = Math.max($(window).height() - modal.outerHeight(), 0) / 2;
     var left = Math.max($(window).width() - modal.outerWidth(), 0) / 2;
 
@@ -124,11 +133,13 @@ bluesClue.on('click', function(e) {
         top:top + $(window).scrollTop(), 
         left:left + $(window).scrollLeft()
     });
+    //make it show up
 	overlay.show();
 	modal.show();
 });
 var closeButton = $("#close");
 closeButton.on('click', function(e) {
+	//hide everything;
 	overlay.hide();
 	modal.hide();
 });
